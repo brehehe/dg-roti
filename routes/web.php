@@ -10,5 +10,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', UserHomeIndex::class);
-Route::resource('cake', CakeController::class);
-Route::resource('ingredient', IngredientsController::class);
+// Route::resource('cake', CakeController::class);
+// Route::resource('ingredient', IngredientsController::class);
+
+
+Route::resources([
+    'cake' => CakeController::class,
+    'ingredient' => IngredientsController::class,
+]);
