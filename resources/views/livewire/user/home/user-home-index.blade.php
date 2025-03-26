@@ -13,7 +13,7 @@
                 <div class="grid grid-cols-6 gap-4 mt-6">
                     @foreach ($cakes as $cake)
                         <div wire:click="choiceCake({{ $cake->id }})"
-                            class="bg-main flex items-center justify-center  rounded-full p-3 {{ $cake->id == $get_cake?->id ? 'border-4 border-border-search' : null }} hover:border-4 hover:border-border-search transition-all ease-out duration-400">
+                            class="bg-main flex items-center justify-center  rounded-full p-3 {{ $cake->id == $get_cake?->id ? 'border-4 border-border-search' : null }} hover:border-4 hover:border-border-search transition-all ease-out duration-400 cursor-pointer">
                             <img src="{{ asset('storage/' . $cake->image) }}" alt="">
                         </div>
                     @endforeach
