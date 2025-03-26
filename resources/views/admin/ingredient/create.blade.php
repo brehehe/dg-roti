@@ -3,12 +3,11 @@
 
 @section('content')
     <div class="container-fluid mb-3">
-        <form method="post" action="/ingredient" enctype="multipart/form-data">
+        <form method="post" action="{{ route('ingredient.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nama Bahan <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Bahan"
-                    required autocomplete="off">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama Bahan" required autocomplete="off">
             </div>
             <div class="mb-3">
                 <label for="cake_id" class="form-label">Nama Kue <span class="text-danger">*</span></label>

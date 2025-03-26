@@ -18,32 +18,26 @@
             </div>
         </div>
         <hr class="my-3">
-        {{-- <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
-            </ol>
-        </nav> --}}
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Roti</th>
-                    <th scope="col" class="text-center" width="10px">Aksi</th>
+                    <th style="width: 10px" class="text-center">#</th>
+                    <th>Name</th>
+                    <th>Roti</th>
+                    <th class="text-center" width="10px">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($ingredients as $ingredient)
                     <tr>
-                        <th>{{ $loop->iteration }}</th>
+                        <th class="text-center">{{ $loop->iteration }}</th>
                         <th>{{ $ingredient->name }}</th>
-                        <th>{{ $ingredient->cake->name }}</th>
+                        <th>{{ $ingredient?->cake?->name ?? '-' }}</th>
                         <th>
                             <div class="d-flex gap-2">
                                 <div>
-                                    <a href="/ingredient/{{ $ingredient->id }}/edit" class="btn btn-warning">Edit</a>
+                                    <a href="{{ route('ingredient.edit', $ingredient->id) }}"
+                                        class="btn btn-warning">Edit</a>
                                 </div>
                                 <div>
                                     <form action="{{ route('ingredient.destroy', $ingredient->id) }}" method="POST"

@@ -100,7 +100,11 @@ class CakeController extends Controller
     public function destroy(string $id)
     {
         //
-        Cake::find($id)->delete();
+        $cake = Cake::find($id);
+        if (!$cake) {
+            return redirect()->route('cake.index')->with('error', 'Data tidak ditemukan!');
+        }
+        $cake->delete();
         return redirect()->route('cake.index')->with('success', 'Data berhasil dihapus!');
     }
 }

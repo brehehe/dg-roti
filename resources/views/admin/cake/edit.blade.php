@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Deskripsi <span class="text-danger">*</span></label>
-                <textarea name="description" class="form-control" id="description" rows="3" placeholder="Masukan Deskripsi Roti">{{ intval($cake->description) }}</textarea>
+                <textarea name="description" class="form-control" id="description" rows="3" placeholder="Masukan Deskripsi Roti">{{ $cake->description }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
